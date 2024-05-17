@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 
 import Mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
-Mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZGVsYW5kaSIsImEiOiJjbHYzdWRqeGUwMXpqMmxwMXVpbTZoaTY0In0.yultRG7jGwv8Qg7obV_QDw';
+Mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZGVsYW5kaSIsImEiOiJjbHYzdjBoOXMwMjNvMnFsbzU1cm5rajJqIn0.Px4Id25nBBgFsGE-0dXIVA';
 
 
 if ( !navigator.geolocation ) {
