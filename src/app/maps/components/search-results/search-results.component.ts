@@ -19,6 +19,7 @@ export class SearchResultsComponent {
   get isLoadingPlaces(): boolean {
     return this.placesService.isLoadingPlaces;
   }
+
   get places(): Feature[] {
     return this.placesService.places;
   }
@@ -29,5 +30,16 @@ export class SearchResultsComponent {
 
     const [lng, lat] = place.center;
     this.mapService.flyTo({ lng, lat })
+  }
+
+  getDirections(place: Feature) {
+    if (!this.placesService.useLocation) throw Error('No hay userLocation');
+
+    this.placesService.deletePlaces();
+
+    const start = this.placesService.useLocation!;
+    const end = place.center as [number, number];
+
+    this.mapService.getRouteBetweenPoints(start, end)
   }
 }

@@ -49,32 +49,35 @@ export class PlacesService {
 
   }
 
-  getPlacesByQuery( query: string = '' ) {
+  getPlacesByQuery(query: string = '') {
 
-    if ( query.length === 0 ) {
+    if (query.length === 0) {
       this.isLoadingPlaces = false;
       this.places = [];
       return;
     }
 
-    if ( !this.useLocation ) throw Error('No hay userLocation');
+    if (!this.useLocation) throw Error('No hay userLocation');
 
     this.isLoadingPlaces = true;
 
-    this.placesApi.get<PlacesResponse>(`/${ query }.json`, {
+    this.placesApi.get<PlacesResponse>(`/${query}.json`, {
       params: {
         proximity: this.useLocation.join(',')
       }
     })
-      .subscribe( resp => {
+      .subscribe(resp => {
         this.isLoadingPlaces = false;
         this.places = resp.features;
 
-        this.mapService.createMarkersFromPlaces( this.places, this.useLocation! );
+        this.mapService.createMarkersFromPlaces(this.places, this.useLocation!);
       });
 
   }
 
+  deletePlaces() {
+    this.places = []
+  }
 
 }
 

@@ -16,6 +16,7 @@ class="list-group mt-2">
     </p>
     <button
     [ngClass]="(place.id === selectedId ) ? 'btn-outline-light':'btn-outline-primary'"
+    (click)="getDirections( place )"
     class="btn btn-sm btn-outline-primary">
       Direcciones
     </button>
