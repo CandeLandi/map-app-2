@@ -2,6 +2,14 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker } from 'mapbox-gl';
 
+
+import Mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+
+Mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZGVsYW5kaSIsImEiOiJjbHYzdjBoOXMwMjNvMnFsbzU1cm5rajJqIn0.Px4Id25nBBgFsGE-0dXIVA';
+
+
+
+
 @Component({
   selector: 'app-map-view',
   templateUrl: './map-view.component.html',
@@ -24,7 +32,7 @@ export class MapViewComponent implements AfterViewInit {
 
     const map = new Map({
       container: this.mapDivElement.nativeElement, // container ID
-      style: 'mapbox://styles/mapbox/dark-v12', // style URL
+      style: 'mapbox://styles/mapbox/streets-v12', // style URL
       center: this.placesService.useLocation, // starting position [lng, lat]
       zoom: 9, // starting zoom
     });

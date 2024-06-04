@@ -12,7 +12,6 @@ export class MapService {
   public markers: Marker[] = [];
 
   constructor(
-    private mapService: MapService,
 
   ) {
   }
