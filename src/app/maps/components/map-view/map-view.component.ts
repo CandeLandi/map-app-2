@@ -3,12 +3,6 @@ import { MapService, PlacesService } from '../../services';
 import { Map, Popup, Marker } from 'mapbox-gl';
 
 
-import Mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
-
-Mapboxgl.accessToken = 'pk.eyJ1IjoiY2FuZGVsYW5kaSIsImEiOiJjbHYzdjBoOXMwMjNvMnFsbzU1cm5rajJqIn0.Px4Id25nBBgFsGE-0dXIVA';
-
-
-
 
 @Component({
   selector: 'app-map-view',
